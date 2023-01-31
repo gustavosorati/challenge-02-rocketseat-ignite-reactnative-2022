@@ -1,34 +1,34 @@
-import { MealsContext } from '@context/MealsContext';
-import { useNavigation } from '@react-navigation/native';
-import {ArrowUpRight} from 'phosphor-react-native';
-import { useContext } from 'react';
-import { useTheme } from 'styled-components/native';
-import { Text } from '../../../../components/Text';
-import { Container, Icon } from './styles';
+import { MealsContext } from '@context/MealsContext'
+import { useNavigation } from '@react-navigation/native'
+import { ArrowUpRight } from 'phosphor-react-native'
+import { useContext } from 'react'
+import { useTheme } from 'styled-components/native'
+import { Text } from '../../../../components/Text'
+import { Container, Icon } from './styles'
 
-export function Banner() {
-  const {meals} = useContext(MealsContext);
+export function Banner () {
+  const { meals } = useContext(MealsContext)
 
   const countGoodFoods = meals.reduce((goodFoodCount, meal) => {
-    return goodFoodCount + meal.foods.filter((food) => food.status === true).length;
-  }, 0);
+    return goodFoodCount + meal.foods.filter((food) => food.status === true).length
+  }, 0)
   const countBadFoods = meals.reduce((badFoodCount, meal) => {
-    return badFoodCount + meal.foods.filter((food) => food.status === false).length;
-  }, 0);
-  const amountFoods = countGoodFoods + countBadFoods;
+    return badFoodCount + meal.foods.filter((food) => food.status === false).length
+  }, 0)
+  const amountFoods = countGoodFoods + countBadFoods
 
-  const porcentGoodFoods = ((countGoodFoods / amountFoods) * 100);
-  const porcentBadFoods = ((countBadFoods / amountFoods) * 100);
+  const porcentGoodFoods = ((countGoodFoods / amountFoods) * 100)
+  const porcentBadFoods = ((countBadFoods / amountFoods) * 100)
 
-  const resultStatus = porcentGoodFoods > porcentBadFoods ? true : false;
+  const resultStatus = porcentGoodFoods > porcentBadFoods
 
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const {navigate} = useNavigation();
+  const { navigate } = useNavigation()
 
   return (
     <Container
-      onPress={() => navigate('statistics')}
+      onPress={() => { navigate('statistics') }}
       status={resultStatus}
     >
       <Icon>
@@ -43,5 +43,5 @@ export function Banner() {
         das refeições {resultStatus ? 'dentro' : 'fora'} da dieta
       </Text>
     </Container>
-  );
+  )
 }

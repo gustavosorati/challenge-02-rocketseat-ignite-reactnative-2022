@@ -1,5 +1,4 @@
-import styled from 'styled-components/native';
-
+import styled from 'styled-components/native'
 
 export const Container = styled.View`
   flex-direction: row;
@@ -7,11 +6,11 @@ export const Container = styled.View`
   justify-content: space-between;
   padding: 20px 0;
   margin-bottom: 16px;
-`;
+`
 
 export const Image = styled.Image`
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  border: 2px solid ${({theme}) => theme.COLORS['gray-2']};
-`;
+  border: 2px solid ${({ theme }) => theme.COLORS['gray-2']};
+`

@@ -1,23 +1,23 @@
-import { Text } from '@components/Text';
-import { useNavigation } from '@react-navigation/native';
-import { useTheme } from 'styled-components/native';
-import { Container, Left, Separator, Status } from './styles';
+import { Text } from '@components/Text'
+import { useNavigation } from '@react-navigation/native'
+import { useTheme } from 'styled-components/native'
+import { Container, Left, Separator, Status } from './styles'
 
 interface Props {
-  id: string;
-  name: string;
-  date: string;
-  time: string;
-  status: boolean;
+  id: string
+  name: string
+  date: string
+  time: string
+  status: boolean
 }
 
-export function Meal({time, name, status, id, date}: Props) {
-  const theme = useTheme();
+export function Meal ({ time, name, status, id, date }: Props) {
+  const theme = useTheme()
 
-  const {navigate} = useNavigation();
+  const { navigate } = useNavigation()
 
-  function handleShow() {
-    navigate('show', { id, date});
+  function handleShow () {
+    navigate('show', { id, date })
   }
 
   return (
@@ -30,5 +30,5 @@ export function Meal({time, name, status, id, date}: Props) {
 
       <Status status={status} />
     </Container>
-  );
+  )
 }

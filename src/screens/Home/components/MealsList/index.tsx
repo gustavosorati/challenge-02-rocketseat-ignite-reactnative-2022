@@ -1,24 +1,24 @@
-import { useTheme } from 'styled-components/native';
-import { Meal } from './Meal';
-import * as Styled from './styles';
-import { FlatList } from 'react-native';
-import { useContext } from 'react';
-import { MealsContext } from '@context/MealsContext';
-import { Text } from '@components/Text';
-import { Button } from '@components/Button';
-import { Plus } from 'phosphor-react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useTheme } from 'styled-components/native'
+import { Meal } from './Meal'
+import * as Styled from './styles'
+import { FlatList } from 'react-native'
+import { useContext } from 'react'
+import { MealsContext } from '@context/MealsContext'
+import { Text } from '@components/Text'
+import { Button } from '@components/Button'
+import { Plus } from 'phosphor-react-native'
+import { useNavigation } from '@react-navigation/native'
 
-export function MealsList() {
-  const { getMeals } = useContext(MealsContext);
-  const theme = useTheme();
+export function MealsList () {
+  const { getMeals } = useContext(MealsContext)
+  const theme = useTheme()
 
-  const meals = getMeals();
+  const meals = getMeals()
 
-  const {navigate} = useNavigation();
+  const { navigate } = useNavigation()
 
-  function handleNewMeal() {
-    navigate('create');
+  function handleNewMeal () {
+    navigate('create')
   }
 
   return (
@@ -29,7 +29,7 @@ export function MealsList() {
         style={{ marginTop: 8, marginBottom: 32 }}
         onPress={handleNewMeal}
       >
-        <Plus color={theme.COLORS.white} size={18} style={{ marginRight: 8}} />
+        <Plus color={theme.COLORS.white} size={18} style={{ marginRight: 8 }} />
 
         <Text
           color={theme.COLORS.white}
@@ -69,15 +69,13 @@ export function MealsList() {
       </Styled.MealsContainer>
 
     </Styled.Container>
-  );
+  )
 }
-
 
 // async function getMeals() {
 //   try {
 //     const response = await AsyncStorage.getItem('@meals');
 //     const meals: Meals[] = response != null ? JSON.parse(response) : [];
-
 
 //     console.log(meals);
 //     setMeals(meals);
