@@ -1,5 +1,5 @@
 module.exports = function(api) {
-  api.cache(true);
+  api.cache(true)
   return {
     presets: ['babel-preset-expo'],
     plugins: [
@@ -13,7 +13,7 @@ module.exports = function(api) {
           '@screens': './src/screens',
           '@storage': './src/storage',
           '@theme': './src/theme',
-          '@utils': './src/utils',
+          '@utils': './src/utils'
         }
       }
       ]
