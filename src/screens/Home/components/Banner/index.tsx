@@ -10,10 +10,10 @@ export function Banner () {
   const { meals } = useContext(MealsContext)
 
   const countGoodFoods = meals.reduce((goodFoodCount, meal) => {
-    return goodFoodCount + meal.foods.filter((food) => food.status === true).length
+    return goodFoodCount + meal.foods.filter((food) => food.status).length
   }, 0)
   const countBadFoods = meals.reduce((badFoodCount, meal) => {
-    return badFoodCount + meal.foods.filter((food) => food.status === false).length
+    return badFoodCount + meal.foods.filter((food) => !food.status).length
   }, 0)
   const amountFoods = countGoodFoods + countBadFoods
 
