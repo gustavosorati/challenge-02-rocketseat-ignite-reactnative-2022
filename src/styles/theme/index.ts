@@ -16,7 +16,7 @@ export default {
     'gray-6': '#EFF0F0',
     'gray-7': '#FAFAFA',
 
-    'white': '#FFF'
+    white: '#FFF'
   },
   FONT_SIZE: {
     SM: 12,
@@ -24,10 +24,10 @@ export default {
     LG: 16,
     XL: 18,
     '2XL': 24,
-    '3XL': 32,
+    '3XL': 32
   },
   FONT_FAMILY: {
     REGULAR: 'Nunito_400Regular',
-    BOLD: 'Nunito_700Bold',
+    BOLD: 'Nunito_700Bold'
   }
-} as const;
+} as const

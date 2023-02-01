@@ -6,7 +6,8 @@ import { Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito'
 
 import { Text } from 'react-native'
 
-import theme from 'src/styles/theme'
+import theme from './src/styles/theme'
+import { Routes } from '@routes/index'
 
 export default function App () {
   const [fontsLoaded] = useFonts({ Nunito_400Regular, Nunito_700Bold })
@@ -15,7 +16,7 @@ export default function App () {
     <ThemeProvider theme={theme}>
       <StatusBar />
 
-      { fontsLoaded ? <Text>Carregou</Text> : <Text>Não carregou</Text> }
+      { fontsLoaded ? <Routes /> : <Text>Não carregou</Text> }
     </ThemeProvider>
   )
 }
