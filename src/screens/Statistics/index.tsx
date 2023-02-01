@@ -20,11 +20,13 @@ export function Statistics () {
 
   let aux = 0
   const bestSequencieGoodFoods = allFoods.reduce((acc, item) => {
-    if (item.status) aux = aux + 1
+    if (item.status) {
+      aux = aux + 1
+
+      acc = aux > acc ? aux : acc
+    }
 
     if (!item.status) {
-      if (aux > acc) acc = aux
-
       aux = 0
     }
     return acc
