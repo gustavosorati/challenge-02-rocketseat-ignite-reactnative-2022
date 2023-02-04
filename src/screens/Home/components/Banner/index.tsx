@@ -20,7 +20,7 @@ export function Banner () {
   const porcentGoodFoods = ((countGoodFoods / amountFoods) * 100)
   const porcentBadFoods = ((countBadFoods / amountFoods) * 100)
 
-  const resultStatus = porcentGoodFoods > porcentBadFoods
+  const resultStatus = porcentGoodFoods >= porcentBadFoods
 
   const theme = useTheme()
 

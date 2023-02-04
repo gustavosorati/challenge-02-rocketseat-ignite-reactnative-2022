@@ -2,6 +2,7 @@
 import { Text } from '@components/Text'
 import { type IMealDTO, MealsContext } from '@context/MealsContext'
 import { useNavigation } from '@react-navigation/native'
+import { dateFormatter, timeFormatter } from '@utils/formatter'
 import { useContext, useState } from 'react'
 import { KeyboardAvoidingView } from 'react-native'
 import { useTheme } from 'styled-components/native'
@@ -38,6 +39,10 @@ export function Form ({ type, meal }: FormProps) {
   }
 
   async function handleRegisterMeal () {
+    if (name.trim().length <= 0 || date.trim().length <= 0 || hour.trim().length <= 0) {
+      return
+    }
+
     try {
       await registerMeal({
         name,
@@ -57,7 +62,6 @@ export function Form ({ type, meal }: FormProps) {
     if (!meal) return
 
     try {
-      console.log('update meal')
       await updateMeal({
         id: meal?.id,
         name,
@@ -81,7 +85,8 @@ export function Form ({ type, meal }: FormProps) {
         <Text weight={theme.FONT_FAMILY.BOLD}>Nome</Text>
         <Styled.Input
           defaultValue={name}
-          onChangeText={setName} />
+          onChangeText={setName}
+          />
       </Styled.InputLabel>
 
       <Styled.InputLabel>
@@ -98,7 +103,12 @@ export function Form ({ type, meal }: FormProps) {
           <Text weight={theme.FONT_FAMILY.BOLD}>Data</Text>
           <Styled.Input
             defaultValue={date}
-            onChangeText={setDate}
+            maxLength={8}
+            keyboardType="numeric"
+            onChangeText={(text) => {
+              const maskedText = dateFormatter(text)
+              setDate(maskedText)
+            }}
           />
         </Styled.GridElementLeft>
 
@@ -106,7 +116,12 @@ export function Form ({ type, meal }: FormProps) {
           <Text weight={theme.FONT_FAMILY.BOLD}>Hora</Text>
           <Styled.Input
             defaultValue={hour}
-            onChangeText={setHour}
+            maxLength={5}
+            keyboardType="numeric"
+            onChangeText={(text) => {
+              const maskedText = timeFormatter(text)
+              setHour(maskedText)
+            }}
           />
         </Styled.GridElementRight>
       </Styled.Grid2>

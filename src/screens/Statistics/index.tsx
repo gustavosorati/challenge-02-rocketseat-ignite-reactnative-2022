@@ -42,14 +42,14 @@ export function Statistics () {
   const porcentGoodFoods = ((countGoodFoods / allFoods.length) * 100)
   const porcentBadFoods = ((countBadFoods / allFoods.length) * 100)
 
-  const resultStatus = porcentGoodFoods > porcentBadFoods
+  const resultStatus = porcentGoodFoods >= porcentBadFoods
 
   return (
-    <Styled.Container status={resultStatus || undefined}>
+    <Styled.Container status={resultStatus}>
 
       <Header
         porcent={resultStatus ? porcentGoodFoods.toFixed(2) : porcentBadFoods.toFixed(2)}
-        status={resultStatus || undefined}
+        status={resultStatus}
       />
 
       <Styled.Content>
