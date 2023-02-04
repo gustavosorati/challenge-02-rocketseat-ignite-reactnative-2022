@@ -8,3 +8,18 @@ This repository contains the 2th challenge: Daily Diet from the react native cou
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
+
+<table>
+  <tr>
+    <td><img src="./_docs/mob-01.png" /></td>
+    <td><img src="./_docs/mob-02.png" /></td>
+    <td><img src="./_docs/mob-03.png" /></td>
+  </tr>
+  <tr>
+    <td><img src="./_docs/mob-04.png" /></td>
+    <td><img src="./_docs/mob-06.png" /></td>
+    <td><img src="./_docs/mob-05.png" /></td>
+  </tr>
+</table>
+
+
