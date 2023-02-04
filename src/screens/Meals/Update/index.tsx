@@ -25,7 +25,7 @@ export function UpdateMeal () {
   return (
     <Styled.Container>
 
-      <Header title="Nova refeição" />
+      <Header title="Atualizar refeição" />
 
       <Form
         type='update'

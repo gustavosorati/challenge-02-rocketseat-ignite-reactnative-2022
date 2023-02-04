@@ -103,7 +103,7 @@ export function Form ({ type, meal }: FormProps) {
           <Text weight={theme.FONT_FAMILY.BOLD}>Data</Text>
           <Styled.Input
             defaultValue={date}
-            maxLength={8}
+            maxLength={10}
             keyboardType="numeric"
             onChangeText={(text) => {
               const maskedText = dateFormatter(text)
