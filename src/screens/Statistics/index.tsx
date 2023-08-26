@@ -45,11 +45,11 @@ export function Statistics () {
   const resultStatus = porcentGoodFoods >= porcentBadFoods
 
   return (
-    <Styled.Container status={resultStatus}>
+    <Styled.Container status={meals.length > 0 ? resultStatus : null}>
 
       <Header
         porcent={resultStatus ? porcentGoodFoods.toFixed(2) : porcentBadFoods.toFixed(2)}
-        status={resultStatus}
+        status={meals.length > 0 ? resultStatus : null}
       />
 
       <Styled.Content>

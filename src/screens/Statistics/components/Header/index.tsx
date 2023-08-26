@@ -10,7 +10,7 @@ import * as Styled from './styles'
 
 interface HeaderProps {
   porcent: string
-  status?: boolean
+  status?: boolean | null
 }
 
 export function Header ({ porcent, status }: HeaderProps) {

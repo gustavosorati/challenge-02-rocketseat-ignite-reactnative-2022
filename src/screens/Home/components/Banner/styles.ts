@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 interface ContainerProps {
-  status?: boolean
+  status?: boolean | null
 }
 
 export const Container = styled.TouchableOpacity<ContainerProps>`
@@ -18,7 +18,7 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
 
     if (status === false) return theme.COLORS['red-light']
 
-    if (status === undefined) return theme.COLORS['gray-5']
+    if (status === null) return theme.COLORS['gray-5']
   }};
 `
 

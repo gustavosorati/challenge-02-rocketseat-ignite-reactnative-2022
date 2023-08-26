@@ -4,7 +4,7 @@ import { Platform, StatusBar } from 'react-native'
 const isAndroid = Platform.OS === 'android'
 
 interface Props {
-  status?: boolean
+  status?: boolean | null
 }
 
 export const Container = styled.SafeAreaView<Props>`
@@ -16,7 +16,7 @@ export const Container = styled.SafeAreaView<Props>`
 
     if (status === false) return theme.COLORS['red-light']
 
-    if (status === undefined) return theme.COLORS['gray-5']
+    if (status === null) return theme.COLORS['gray-5']
   }};
 `
 
